@@ -8,6 +8,8 @@ const exerciseRoute = require('./Routers/exerciseRoute');
 const scheduleRoute = require('./Routers/scheduleRoute');
 const workoutDetails = require('./Routers/workoutdetailRoute');
 const userSchedule = require('./Routers/userScheduleRoute');
+const tracking = require('./Routers/trackingRoute');
+const dietplan = require('./Routers/dietplanRoute');
 
 const app = express();
 
@@ -58,5 +60,7 @@ app.use('/api/v1/exerc', exerciseRoute);
 app.use('/api/v1/schedule', scheduleRoute);
 app.use('/api/v1/workoutdetails', workoutDetails);
 app.use('/api/v1/workout', userSchedule);
+app.use('/api/v1/tracking', tracking);
+app.use('/api/v1/dietplan', dietplan);
 
 module.exports = app;

@@ -5,4 +5,6 @@ const router = express.Router();
 
 router.route('/').post(Workout.Workout);
 
+router.route('/:id').get(Workout.getUserSchedule);
+
 module.exports = router;

@@ -11,8 +11,8 @@ router
 
 router
   .route('/:id')
-  .get(workoutDetailsController.getWorkoutDetail) // Get workout details by ID
-  .patch(workoutDetailsController.updateWorkoutDetail) // Update workout details by ID
-  .delete(workoutDetailsController.deleteWorkoutDetail); // Delete workout details by ID
+  .get(workoutDetailsController.getWorkoutDetail)
+  .patch(workoutDetailsController.updateWorkoutDetail)
+  .delete(workoutDetailsController.deleteWorkoutDetail);
 
 module.exports = router;
