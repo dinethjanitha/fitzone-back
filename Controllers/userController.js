@@ -8,8 +8,8 @@ const jwt = require('jsonwebtoken');
 const { title } = require('process');
 
 // eslint-disable-next-line arrow-body-style
-const signToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+const signToken = (id, userType) => {
+  return jwt.sign({ id, userType }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
@@ -69,7 +69,7 @@ exports.signin = async (req, res, next) => {
     }
 
     console.log(user._id);
-    const token = signToken(user._id);
+    const token = signToken(user._id, user.userType);
     console.log(token);
     res.status(200).json({
       status: 'success',
@@ -80,17 +80,6 @@ exports.signin = async (req, res, next) => {
       message: 'User Not found',
     });
   }
-};
-
-exports.getAllUsers = async (req, res) => {
-  const all = await User.find();
-
-  res.status(200).json({
-    status: 'success',
-    message: {
-      data: all,
-    },
-  });
 };
 
 exports.protected = async (req, res, next) => {
@@ -203,6 +192,47 @@ exports.updateUser = async (req, res) => {
     res.status(400).json({
       status: 'fail',
       message: err.message || 'Error updating user',
+    });
+  }
+};
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json({
+      status: 'success',
+      data: {
+        users,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'fail',
+      message: error.message,
+    });
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params; // Get user ID from request parameters
+    const deletedUser = await User.findByIdAndDelete(id);
+
+    if (!deletedUser) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'User not found',
+      });
+    }
+
+    res.status(204).json({
+      status: 'success',
+      message: 'User deleted successfully',
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      message: error.message,
     });
   }
 };

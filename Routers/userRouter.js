@@ -14,7 +14,8 @@ router.route('/').get(userController.protected, userController.getAllUsers);
 router
   .route('/:id')
   .get(userController.userdetails)
-  .patch(userController.updateUser);
+  .patch(userController.updateUser)
+  .delete(userController.deleteUser);
 //   .post(userController.createNewUser);
 
 module.exports = router;
