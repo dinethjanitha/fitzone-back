@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 //   });
 // });
 const corsOptions = {
-  origin: 'https://fitzonesite.netlify.app/',
+  origin: 'https://fitzonesite.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
