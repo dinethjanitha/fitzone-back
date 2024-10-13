@@ -2,7 +2,7 @@ const User = require('../Model/userModel');
 const AppError = require('../utils/appError');
 const { promisify } = require('util');
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const jwt = require('jsonwebtoken');
 const { title } = require('process');
