@@ -19,9 +19,9 @@ const dietplan = (age, weight, goalweight, vegetarianornon, alagicfoods) => {
           }
 
           if (al) {
-            dietplanId = '1';
+            dietplanId = '6707fae1569196f12c043503';
           } else {
-            dietplanId = '2';
+            dietplanId = '6707fae7569196f12c043509';
           }
         });
       } else {
@@ -37,9 +37,9 @@ const dietplan = (age, weight, goalweight, vegetarianornon, alagicfoods) => {
           }
 
           if (al) {
-            dietplanId = '3';
+            dietplanId = '6707faec569196f12c04350f';
           } else {
-            dietplanId = '4';
+            dietplanId = '6707faf1569196f12c043515';
           }
         });
       }
@@ -57,9 +57,9 @@ const dietplan = (age, weight, goalweight, vegetarianornon, alagicfoods) => {
           }
 
           if (al) {
-            dietplanId = '5';
+            dietplanId = '6707fafc569196f12c043521';
           } else {
-            dietplanId = '6';
+            dietplanId = '6707fb01569196f12c043527';
           }
         });
       } else {
@@ -75,9 +75,9 @@ const dietplan = (age, weight, goalweight, vegetarianornon, alagicfoods) => {
           }
 
           if (al) {
-            dietplanId = '7';
+            dietplanId = '6707fb05569196f12c04352d';
           } else {
-            dietplanId = '8';
+            dietplanId = '6707fb0a569196f12c043533';
           }
         });
       }

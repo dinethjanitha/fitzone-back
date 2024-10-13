@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const express = require('express');
 
 const userController = require('../Controllers/userController');
